@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /* Style the hamburger menu */
+    .hamburger {
+      width: 35px;
+      height: 5px;
+      background-color: black;
+      margin: 6px 0;
+    }
+
+    /* Hide the menu when the checkbox is not checked */
+    #toggle {
+      display: none;
+    }
+
+    /* Show the menu when the checkbox is checked */
+    #toggle:checked ~ .menu {
+      max-height: 300px;
+    }
+
+    /* Style the menu */
+    .menu {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-in;
+    }
+
+    /* Style the menu items */
+    .menu li {
+      border-bottom: 1px solid #eee;
+    }
+
+    .menu li a {
+      display: block;
+      padding: 15px;
+      text-decoration: none;
+      color: black;
+    }
+
+    .menu li a:hover {
+      background-color: #eee;
+    }
+
+    @media (min-width:768px){
+        .menu{
+            display: none;
+        }
+        .hamburger{
+            display: none;
+        }
+    }
+  </style>
+</head>
+<body>
+  <!-- Create a checkbox to toggle the menu -->
+  <input type="checkbox" id="toggle">
+  <!-- Create a label for the checkbox and style it as a hamburger icon -->
+  <label for="toggle">
+    <div class="hamburger"></div>
+    <div class="hamburger"></div>
+    <div class="hamburger"></div>
+  </label>
+  <!-- Create an unordered list for the menu items -->
+  <ul class="menu">
+    <li><a href="#home" onclick="showPage('home')">Home</a></li>
+    <li><a href="#about" onclick="showPage('about')">About</a></li>
+    <li><a href="#skills" onclick="showPage('skills')">Skills</a></li>
+    <li><a href="#projects" onclick="showPage('projects')">Projects</a></li>
+    <li><a href="#contact" onclick="showPage('contact')">Contact</a></li>
+  </ul>
+</body>
+</html>
